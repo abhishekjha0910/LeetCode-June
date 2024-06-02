@@ -22,7 +22,7 @@ class day1{
         }
         return ans;
     }
-    public static void main(String[] args) {
+    public static void main(String[] args) { 
         String s = "hello";
 
         System.out.println(scoreoftheinteger(s));
