@@ -1,0 +1,27 @@
+import java.util.HashMap;
+import java.util.Map;
+public class day4 {
+    public static int longestPalindrome(String s) {
+        Map<Character, Integer> counts = new HashMap<>();
+        for (char c : s.toCharArray()) {
+            counts.put(c, counts.getOrDefault(c, 0) + 1);
+        }
+        int length = 0;
+        boolean hasOdd = false;
+        for (int count : counts.values()) {
+            length += (count / 2) * 2;
+            if (count % 2 == 1) {
+                hasOdd = true;
+            }
+        }
+        if (hasOdd) {
+            length += 1;
+        }
+        return length; 
+    }
+
+    public static void main(String[] args) {
+        String s = "abccccdd";
+        System.out.println(longestPalindrome(s));
+    }
+}
